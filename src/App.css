@@ -1,0 +1,161 @@
+body
+{
+  background: url("/Background.png");
+background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+height: 90vh;
+ background-attachment: fixed; 
+}
+/* Background with floating emojis */
+.floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1; /* behind everything */
+}
+
+.floating-icons div {
+  position: absolute;
+  font-size: 35px;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.7;
+}
+
+/* Random starting positions */
+.floating-icons div:nth-child(1) { left: 10%; animation-duration: 12s; font-size: 40px; }
+.floating-icons div:nth-child(2) { left: 25%; animation-duration: 15s; font-size: 50px; }
+.floating-icons div:nth-child(3) { left: 40%; animation-duration: 11s; }
+.floating-icons div:nth-child(4) { left: 55%; animation-duration: 14s; }
+.floating-icons div:nth-child(5) { left: 70%; animation-duration: 13s; font-size: 45px; }
+.floating-icons div:nth-child(6) { left: 85%; animation-duration: 16s; }
+.floating-icons div:nth-child(7) { left: 50%; animation-duration: 18s; }
+.floating-icons div:nth-child(8) { left: 5%; animation-duration: 17s; }
+
+/* Floating animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh);
+    opacity: 0.2;
+  }
+}
+
+.title
+{
+  font-family: "Poppins", serif;
+  margin-left: 30px;
+    font-size: 40px;
+}
+
+
+.port {
+  background: linear-gradient(90deg, #ff0080, #ff8c00);
+  background-clip: text;           
+  -webkit-background-clip: text;   
+  color: transparent;
+}
+
+.folio {
+  background: linear-gradient(90deg, #00c2ff, #007bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+/* Header layout */
+.header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* Navigation bar */
+.nav {
+  margin-right:50px;
+  display: flex;
+  gap: 100px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #00c2ff;
+   transform: translateY(-3px);
+}
+
+.btn.download {
+  margin-right:20px ;
+  display: inline-block;
+  border:2px solid red;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+/* Button hover/focus */
+.btn.download:hover,
+.btn.download:focus {
+  transform: translateY(-4px) scale(1.05); 
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+  opacity: 0.98;
+}
+
+
+
+
+
+/* nav link styles (example) */
+.nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* style main content so it starts below header */
+.main-content {
+  padding-top: calc(var(--header-height) + 24px); /* ensures first section is not hidden behind header */
+}
+
+/* apply scroll margin so anchor always leaves space for header */
+.section {
+  /* tells the browser to stop this far above the element when jumping to an anchor */
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  padding: 60px 28px; /* section padding */
+  min-height: calc(100vh - var(--header-height)); /* optional: make each section at least full viewport minus header */
+  background: transparent;
+}
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* responsive header height adjustments (if header changes on mobile) */
+@media (max-width: 640px) {
+  :root { --header-height: 72px; }
+  .nav a { margin-left: 12px; font-size: 14px; }
+}
