@@ -30,7 +30,7 @@ export default function Projects() {
         "The runway lighting system leverages Arduino -based controls for rapid activation and dynamic lighting adjustments using real-time sensor data, enhancing safety and reducing reaction times in critical situations. ",
       category: "iot",
       image: "/IOT.jpg",
-      link: "src/assets/All IOT.jpg"
+      link: "/All IOT.jpg"
     }
   ];
 
